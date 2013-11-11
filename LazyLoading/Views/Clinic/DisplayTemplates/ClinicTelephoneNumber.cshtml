@@ -1,0 +1,7 @@
+﻿@model LazyLoading.Models.ClinicTelephoneNumber
+         
+@if (!Model.TelephoneNumber.Deleted)
+{
+    <dt>@Html.DisplayFor(m => m.TelephoneNumber.PhoneType)</dt>
+    <dd>@Html.DisplayFor(m => m.TelephoneNumber.PhoneNumber)</dd>
+}

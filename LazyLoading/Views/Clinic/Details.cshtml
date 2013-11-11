@@ -1,0 +1,33 @@
+﻿@model LazyLoading.Models.Clinic
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Clinic</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+    </dl>
+    @if (Model.TelephoneNumbers.Any())
+    {
+        <h5>Telephones</h5>
+        <hr/>
+        <dl class="dl-horizontal">
+            @Html.DisplayFor(m => m.TelephoneNumbers)
+        </dl>
+    }
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {id = Model.ClinicId}) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
